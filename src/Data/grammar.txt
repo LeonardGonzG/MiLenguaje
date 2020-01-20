@@ -1,0 +1,110 @@
+START : Make+;
+Make : Receipt.MethodReceipt | Sale.MethodSale | Product.MethodProduct | Customer.MethodCustomer;  
+
+MethodReceipt : CreateReceipt | DeleteReceipt | EditReceipt; 
+CreateReceipt : NewReceipt(DataReceipt);
+DataReceipt : CodeReceipt '/' Trade '/' NIT '/' Phone '/' Address '/' Logo '/' Entity '/' Sector; 
+DeleteReceipt : DELETE(CodeReceipt);
+EditReceipt : SET(CodeReceipt ',' NEWCodeReceipt) | SET(Trade ',' NEWTrade) | SET(NIT ',' NEWNIT) | SET(Phone ',' NEWPhone) | SET(Address ',' NEWAddress) | SET(Logo ',' NEWLogo) | SET(Entity ',' NEWEntity) | SET(Sector ',' NEWSector);
+
+MethodSale: CreateSale | DeleteSale | EditSale; 
+CreateSale: NewSale(DataSale);
+DataSale: CodeSale '/' Sector;
+DeleteSale: DELETE(CodeSale); 
+EditSale : SET(CodeSale ',' NEWCodeSale) | SET(Sector ',' NEWSector);
+
+MethodProduct : CreateProduct | DeleteProduct | EditProduct; 
+CreateProduct : NewProduct(DataProduct) | TotalProduct;
+DataProduct :	CodeProduct '/' NameProduct '/' QuantitySell '/' UnitValue '/' IVA '/' TotalValue '/' Sector; 
+DeleteProduct:	DELETE(CodeProduct);
+EditProduct: SET(CodeProduct ',' NEWCodeProduct) | SET(NameProduct ',' NEWNameProduct) | SET(QuantitySell ',' NEWQuantitySell) 
+| SET(UnitValue ',' NEWUnitValue) | SET(IVA ',' NEWIVAPRODUCT0) | SET(TotalValue ',' NEWTotalValueProduct) | SET(Sector ',' NEWSector);
+
+MethodCustomer: CreateCustomer | DeleteCustomer |  EditCustomer;
+CreateCustomer: NewCustomer(DataCustomer);
+DataCustomer:	CodeCustomer '/' FullNameCustomer '/' IDCustomer '/'  PhoneC '/' Sector '/' Signature;
+DeleteCustomer: DELETE(CodeCustomer);
+EditCustomer: SET(CodeCustomer ',' NEWCodeCustomer) | SET(FullNameCustomerustomer ',' NEWFullNameCustomerustomer) | SET(IDCustomer ',' NUEVAIDCustomer) | SET(PhoneC ',' NEWPhoneC) | SET(Sector ',' NEWSector);
+
+NIT : Number;
+Phone : Number;
+Entity : Word;
+Sector : 1 | 2 | 3 | 4;
+Address : Word Number '#' Number Symbol Number | Word Number '#' Number Symbol Number Word; 
+Logo : Word '.' EXT;
+Trade : Word;
+CodeCustomer : Identifying;
+CodeReceipt : Identifying;
+FullNameCustomer : Word;
+IDCustomer : Number;
+PhoneC : Number;
+Word : [a-zA-Z]+;
+Number : [0-9]+;
+Symbol : [- + * _ = ( ) $ %  , . ? ; : ',' , #];
+EXT : 'png' | 'jpg'; 
+Sector : 1 | 2 | 3 | 4; 
+Identifying : '#' Number;
+
+CodeSale : Identifying;
+CodeProduct : Identifying;
+NameProduct : [a-zA-Z] [a-zA-Z0-9]*;
+QuantitySell : Number;
+UnitValue : Number;
+IVA : Number;
+TotalValue : Number;
+FullNameCustomer: Word;
+IDCustomer : Number;
+
+Signature: High 'x' Width;
+High: Number;
+Width: Number;
+
+
+
+----------------
+ReservedWords ->
+
+Receipt.MethodReceipt | Sale.MethodSale | Product.MethodProduct | Customer.MethodCustomer | DELETE | SET |
+CreateReceipt | DeleteReceipt | EditReceipt | NewReceipt | 
+CreateSale | DeleteSale | EditSale | NewSale |
+CreateProduct | DeleteProduct | EditProduct | NewProduct |
+CreateCustomer | DeleteCustomer |  EditCustomer | NewCustomer 
+
+Address ->
+Word Number '#' Number Symbol Number | Word Number '#' Number Symbol Number Word
+
+Number ->
+[0-9]+
+
+Word ->
+[a-zA-Z]+
+
+Signature->
+High 'x' Width
+
+EXT ->
+'png' | 'jpg'; 
+
+Logo ->
+Word '.' EXT
+
+Symbol ->
+[- + * _ = ( ) $ %  , . ? ; : ',' , #];
+
+Identifying ->
+'#' Number
+
+Separating ->
+'/'
+
+Parameter ->
+Word ',' Word
+ 
+
+
+
+
+
+
+
+
