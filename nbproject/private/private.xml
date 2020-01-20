@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/GrammarReceipt/src/GUI/Analyzer.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/GrammarReceipt/src/AnalyzerLexer/Main.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/GrammarReceipt/src/AnalyzerLexer/Lexer.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/GrammarReceipt/src/GUI/InfoTable.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/GrammarReceipt/src/AnalyzerLexer/Analyzer.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/GrammarReceipt/src/AnalyzerLexer/Tokens.java</file>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/GrammarReceipt/src/AnalyzerLexer/Lexer.flex</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/GrammarReceipt/src/AnalyzerLexer/Main.java</file>
         </group>
     </open-files>
 </project-private>

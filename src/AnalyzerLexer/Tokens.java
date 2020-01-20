@@ -10,7 +10,7 @@ package AnalyzerLexer;
  * @author Charly Ponce
  */
 public enum Tokens {
-    Reservadas,
+    /*Reservadas,
     Igual,
     Suma,
     Resta,
@@ -18,5 +18,38 @@ public enum Tokens {
     Division,
     Palabra,
     Numero,
-    ERROR
+    ERROR*/
+    
+   ReservedWords,
+   Address,
+   Number,
+   Word,
+   Signature,
+   EXT,
+   Logo,
+   Symbol,
+   Identifying,
+   Separating,
+   Minus,
+   Plus,
+   Asterisk,
+   Underscore,
+   Equal,
+   OpenParenthesis,
+   CloseParenthesis,
+   Dollar,
+   Percent,
+   Comma,
+   Dot,
+   QuestionMark,
+   SemiColon,
+   Colon,
+   SingleQuotes,
+   NumberSign,
+   ERROR,
+   IdentifyingCustomer,
+   IdentifyingReceipt,
+   IdentifyingSale,
+   IdentifyingProduct
+   
 }

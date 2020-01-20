@@ -178,20 +178,47 @@ public class Analyzer extends javax.swing.JFrame {
             while (true) {
                 Tokens tokens = lexer.yylex();
                 if (tokens == null) {
-                    resultado += "FIN";
-                    System.out.println(resultado);
+                    resultado += "END";
+                   // System.out.println(resultado);
                     inputDatatable();
 
                     return;
                 }
                 switch (tokens) {
                     case ERROR:
-                        resultado += "Simbolo no definido\n";
+                        resultado += "Symbol not defined!! \n";
                         break;
-                    case Palabra:
-                    case Numero:
-                    case Reservadas:
-                       // resultado += lexer.lexeme + ": Es un " + tokens + "\n";
+                    case ReservedWords:
+                    case Address:
+                    case Number:
+                    case Word:
+                    case Signature:
+                    case EXT:
+                    case Logo:
+                    case Symbol:
+                    case Identifying:
+                    case Separating:
+                    case Minus:
+                    case Plus:
+                    case Asterisk:
+                    case Underscore:
+                    case Equal:
+                    case OpenParenthesis:
+                    case CloseParenthesis:
+                    case Dollar:
+                    case Percent:
+                    case Comma:
+                    case Dot:
+                    case QuestionMark:
+                    case SemiColon:
+                    case Colon:
+                    case SingleQuotes:
+                    case NumberSign:
+                    case IdentifyingCustomer:
+                    case IdentifyingReceipt:
+                    case IdentifyingSale:
+                    case IdentifyingProduct:
+                        // resultado += lexer.lexeme + ": Es un " + tokens + "\n";
 
                         listToken.add(new IdentifyToken(lexer.lexeme, tokens.toString()));
 
@@ -235,15 +262,13 @@ public class Analyzer extends javax.swing.JFrame {
     }
 
     void clearJTable() {
-         DefaultTableModel modelo=(DefaultTableModel) tableToken.getModel();
-            int filas=tableToken.getRowCount();
-            for (int i = 0;filas>i; i++) {
-                modelo.removeRow(0);
-            }
-        
+        DefaultTableModel modelo = (DefaultTableModel) tableToken.getModel();
+        int filas = tableToken.getRowCount();
+        for (int i = 0; filas > i; i++) {
+            modelo.removeRow(0);
+        }
+
     }
-    
-    
 
     /**
      * @param args the command line arguments
